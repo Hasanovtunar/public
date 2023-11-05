@@ -1,0 +1,49 @@
+<!-- Product Deal Section Start -->
+<style>
+    .product-item__image a img {
+    width: 50vh; /* Resmin genişliği 100% olacak */
+    height: 50vh; /* Resmin yüksekliği 100% olacak */
+    object-fit: cover; /* Resim oranını korurken belirtilen boyutlara sığdırma işlemi */
+    border-radius: 5px; /* İsteğe bağlı: Köşeleri yuvarlatmak için */
+}
+
+</style>
+<div class="custom-container-four container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <!-- Section Title Start -->
+            <div class="section-title-05">
+                <h5 class="section-title-05__title"><span>Kategoriyalar</span></h5>
+                <a href="/category" class="read-more"><span>Mebellər</span><i class="lastudioicon lastudioicon-right-arrow"></i></a>
+            </div>
+            <!-- Section Title End -->
+        </div>
+      
+        <div class="col-12">
+            <div class="product-active-four mt-4">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <% categories.forEach(category => { %>
+                        <!-- swiper-slide start -->
+                        <div class="swiper-slide">
+                            <!-- Product Item Start -->
+                            <div class="product-item product-item-06 border text-center">
+                                <div class="product-item__image">
+                                    <a href="/category"><img width="350" height="350" src="<%= category.imageUrl %>" alt="<%= category.name %>"></a>
+                                </div>
+                                <div class="product-item__content" style="margin-top: 2rem;">
+                                    <h5 class="product-item__title"><a href="/category"><%= category.name %></a></h5>
+                                    <a href="/category" class="product-item__btn">Baxın</a>
+                                </div>
+                            </div>
+                            <!-- Product Item End -->
+                        </div>
+                        <!-- swiper-slide end -->
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product Deal Section End -->

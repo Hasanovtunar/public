@@ -1,0 +1,64 @@
+<style>
+    .satilan-urun {
+        padding: 1rem;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+        margin: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .satilan-urun:hover {
+        transform: scale(1.09);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .satilan-urun__image img {
+        max-width: 50vh;
+        height: 50vh;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .satilan-urun__content {
+        margin-top: 2rem;
+    }
+
+    .satilan-urun__title a {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .baxin-butonu {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: #434141;
+        color: #d6c1c1;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .baxin-butonu:hover {
+        color: azure;
+        background-color: #cc8242;
+    }
+</style>
+
+<div class="row">
+    <% categories.forEach(category => { %>
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="satilan-urun border text-center mx-2 my-2 custom-effect">
+            <div class="satilan-urun__image">
+                <a href="/category"><img width="350" height="350" src="<%= category.imageUrl %>" alt="Qonaq Otağı"></a>
+            </div>
+            <div class="satilan-urun__content" style="margin-top: 2rem;">
+                <h5 class="satilan-urun__title"><a href="/category"><%= category.name %></a></h5>
+                <a href="/category" class="baxin-butonu">BAXIN</a>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+</div>
